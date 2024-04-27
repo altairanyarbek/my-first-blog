@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-gl=r)u#^2@4&=lz)^8y_060xjihli@#9gk@11b1(a$h16n(+d0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'alt.blog']
+ALLOWED_HOSTS = ['altairanuarbek.pythonanywhere.com', 'localhost', '127.0.0.1', 'alt.blog']
 
 
 # Application definition
