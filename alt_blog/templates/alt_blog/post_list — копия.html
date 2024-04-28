@@ -1,23 +1,19 @@
+{% load static %}
 <html>
     <head>
         <title>Django ALT blog</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="{% static 'css/alt_blog.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <div>
+        <div class="page-header">
             <h1><a href="/">Django ALT Blog</a></h1>
         </div>
-
-{% for post in posts %}
-    <div>
-        <p>published: {{ post.published_date }}</p>
-        <h1><a href="">{{ post.title }}</a></h1>
-        <p>{{ post.text|linebreaksbr }}</p>
-    </div>
-{% endfor %}
-
         <div>
 	
-            <p>published: 14.06.2014, 12:14</p>
+            <p>published: 13:42 28.04.2024</p>
             <h2><a href="https://almau.edu.kz/">My first post</a></h2>
             <p>Almaty Management University is a world-class, entrepreneurial, socially responsible university
 AlmaU cooperates with Arizona State University, ranked number 1 in the United States for innovation by U.S. News and World Report for the past eight years, to provide students with world-class educational opportunities. This partnership will provide students with educational content and learning experiences unlike anything else available in the region.
@@ -26,12 +22,31 @@ More than 35 years in the education market, the oldest private university in the
         </div>
 
         <div>
-            <p>published: 14.06.2014, 12:14</p>
+            <p>published: 13:43 28.04.2024</p>
             <h2><a href="https://almau.edu.kz/">My second post</a></h2>
             <p>AlmaU has added two outstanding experts to the Board of Trustees!
 Almaty Management University is proud to announce a significant expansion of the AlmaU Board of Trustees!
 Professor Xiaobo Wu
 Professor Xiaobo Wu is the Qiushi Chair Professor of Strategy and Innovation Management, Dean of the Faculty of Social Sciences, and Director of the National Institute for Innovation Management at Zhejiang University. He is also the co-director of the Zhejiang University—Cambridge University Joint Research Center for Global Manufacturing and Innovation Management.</p>
         </div>
+
+
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+            {% for post in posts %}
+                <div class="post">
+                    <div class="date">
+                        <p>Опубликовано: {{ post.published_date }}</p>
+                    </div>
+                    <h1><a href="">{{ post.title }}</a></h1>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
     </body>
 </html>
